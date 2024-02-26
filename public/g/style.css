@@ -1,0 +1,148 @@
+:root {
+    --primary-color: #001F3F; 
+    --secondary-color: #05040C; 
+    --accent-color: #003366; 
+    --text-color: #FFFFFF; 
+    --contrast-color: #0F0F0F; 
+}
+
+
+  body {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    background-size: 1600% 1600%;
+    animation: bgAnim 25s ease infinite;
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  @keyframes bgAnim {
+    0% {
+      background-position: 0% 50%;
+    }
+  
+    50% {
+      background-position: 100% 50%;
+    }
+  
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    margin-top: 0px;
+  }
+  
+  .nav .heading h1 {
+    font-size: 32px;
+  }
+  
+  .nav heading {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav .nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding:10px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 1px solid var(--text-color);
+    margin-right: 20px;
+    transition: all 0.5s ease;
+  }
+
+  .nav .nav-links a:hover {
+    background-color:var(--accent-color);
+  }
+  
+  
+  span{
+    vertical-align: text-bottom;
+  }
+
+  .container {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container h3 {
+    font-size: 36px;
+    background: linear-gradient(135deg, var(--primary-color), var(--text-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom:0;
+}
+
+.container p {
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+#gsearch {
+    width: 70%;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: transparent;
+    color: var(--text-color);
+    outline: none; 
+    transition: all 0.3s ease; 
+}
+
+#gsearch::placeholder {
+    color: #999;
+}
+
+#gsearch:hover,
+#gsearch:focus {
+    border-color: var(--primary-color); 
+
+}
+
+.gcontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    margin: 30px;
+    justify-items: start;
+}
+
+
+.game {
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15px;
+    color: var(--text-color);
+    max-width: 205px;
+    border: 1px solid var(--text-color);
+    transition: transform 0.3s ease;
+}
+
+.game:hover {
+    transform: scale(1.05);
+}
+
+
+.game img {
+    width:100%;
+    height: auto;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.game h4 {
+    margin-top: 10px;
+    font-size: 18px;
+}
