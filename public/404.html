@@ -15,32 +15,18 @@
             integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
-    <div class="nav">
-        <div class="heading">
-            <h1>Astro｜Games</h1>
-        </div>
-        <div class="nav-links">
-            <a href="/index.html"><span class="material-symbols-outlined">home</span> Home</a>
-            <a href="/"><span class="material-symbols-outlined">search</span> Search</a>
-            <a href="/g/index.html"><span class="material-symbols-outlined">stadia_controller</span> Games</a>
-            <a><span class="material-symbols-outlined">settings</span> Settings</a>
-        </div>
-    </div>
-    <div class="container">
-        <h3>Games</h3>
-        <input id="gsearch" type="text" placeholder="Search Games" />
-    </div>
-    <div class="gcontainer">
-    </div>
-    <div>
-        <p id="uv-error"></p>
-        <pre id="uv-error-code"></pre>
-    </div>
+    <div class="container error">
+        <h1>404 Error!</h1>
+        <p>Try Searching Again...</p>
+        <form id="uv-form">
+            <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden" />
+            <input id="uv-address" type="text" placeholder="Search the web freely" />
+        </form>
 
     <script src="uv/uv.bundle.js" defer></script>
     <script src="uv/uv.config.js" defer></script>
     <script src="uv/register-sw.js" defer></script>
     <script src="uv/search.js" defer></script>
-    <script src="/assets/js/games.js"></script>
+    <script src="script.js"></script>
     <script src="uv/proxy.js" defer></script>
 </body>

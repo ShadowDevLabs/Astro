@@ -1,123 +1,163 @@
 :root {
-    --primary-color: #001F3F; 
-    --secondary-color: #05040C; 
-    --accent-color: #003366; 
-    --text-color: #FFFFFF; 
-    --contrast-color: #0F0F0F; 
+  --primary-color: #037ef9;
+  --secondary-color: #020019;
+  --accent-color: #003366;
+  --text-color: #FFFFFF;
+  --contrast-color: #0F0F0F;
 }
 
 
-  body {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
-    background-size: 1600% 1600%;
-    animation: bgAnim 25s ease infinite;
-    color: var(--text-color);
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  @keyframes bgAnim {
-    0% {
-      background-position: 0% 50%;
-    }
-  
-    50% {
-      background-position: 100% 50%;
-    }
-  
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 20px;
-    margin-top: 0px;
-  }
-  
-  .nav .heading h1 {
-    font-size: 32px;
-  }
-  
-  .nav heading {
-    padding: 0;
-    margin: 0;
-  }
-  
-  .nav .nav-links a {
-    color: var(--text-color);
-    text-decoration: none;
-    padding:10px;
-    cursor: pointer;
-    border-radius: 15px;
-    border: 1px solid var(--text-color);
-    margin-right: 20px;
-    transition: all 0.5s ease;
+body {
+  background: linear-gradient(135deg, var(--secondary-color), var(--contrast-color));
+  background-size: 1600% 1600%;
+  animation: bgAnim 5s ease infinite;
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes bgAnim {
+  0% {
+    background-position: 0% 50%;
   }
 
-  .nav .nav-links a:hover {
-    background-color:var(--accent-color);
-  }
-  
-  
-  span{
-    vertical-align: text-bottom;
+  50% {
+    background-position: 100% 50%;
   }
 
-  .container {
-    max-width: 750px;
-    margin: 0 auto;
-    text-align: center;
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  margin-top: 0px;
+}
+
+.nav .heading h1 {
+  font-size: 32px;
+}
+
+.nav .nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 15px;
+  border: 1px solid var(--text-color);
+  margin-right: 20px;
+  transition: all 0.5s ease;
+}
+
+.nav .nav-links a:hover {
+  background-color: var(--accent-color);
+}
+
+
+span {
+  vertical-align: text-bottom;
+}
+
+.container {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .container h1 {
-    font-size: 66px;
-    background: linear-gradient(135deg, var(--primary-color), var(--text-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin-bottom:0;
+  font-size: 66px;
+  background: linear-gradient(135deg, var(--primary-color), var(--text-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0;
 }
 
 
 .container p {
-    font-size: 18px;
-    color: var(--text-color);
+  font-size: 18px;
+  color: var(--text-color);
 }
 
 #uv-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #uv-address {
-    width: 70%;
-    padding: 10px;
-    font-family: 'Poppins', sans-serif;
-    border: 2px solid var(--accent-color);
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: transparent;
-    color: var(--text-color);
-    outline: none; 
-    transition: all 0.3s ease; 
+  width: 70%;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  border: 2px solid var(--accent-color);
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: transparent;
+  color: var(--text-color);
+  outline: none;
+  transition: all 0.3s ease;
 }
 
 #uv-address::placeholder {
-    color: #999;
+  color: #999;
 }
 
 #uv-address:hover,
 #uv-address:focus {
-    border-color: var(--primary-color); 
+  border-color: var(--primary-color);
 
 }
 
 #uv-form input[type="submit"]:hover {
-    background-color: #394aa5;
+  background-color: #394aa5;
+}
+
+
+.shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top:1vw;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.shortcut {
+  width:125px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--accent-color);
+  align-items: center;
+  transition: background-color 0.3s;
+  cursor:pointer;
+}
+
+.shortcut:hover {
+  background-color: var(--accent-color);
+}
+
+.shortcut img {
+  width: 50px;
+  margin-top: 15px;
+  height: auto;
+}
+
+.shortcut h3 {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.shortcut.disabled {
+  pointer-events: h;
+  opacity:0.7;
+  cursor: not-allowed;
+}
+
+
+.container.error h1{
+  margin-bottom:-1vw;
 }

@@ -12,5 +12,5 @@ function ping() {
     });
 }
 
-ping();
-setInterval(ping, 500);
+//ping();
+////setInterval(ping, 500);
