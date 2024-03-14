@@ -88,7 +88,7 @@ span {
     color: var(--text-color);
 }
 
-#gsearch {
+#appssearch {
     width: 70%;
     padding: 10px;
     font-family: 'Poppins', sans-serif;
@@ -101,12 +101,12 @@ span {
     transition: all 0.3s ease;
 }
 
-#gsearch::placeholder {
+#appssearch::placeholder {
     color: #999;
 }
 
-#gsearch:hover,
-#gsearch:focus {
+#appssearch:hover,
+#appssearch:focus {
     border-color: var(--primary-color);
 
 }
@@ -114,7 +114,7 @@ span {
 .app-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 10px;
+    grid-gap: 20px;
     margin: 30px;
     justify-items: start;
 }
@@ -125,9 +125,8 @@ span {
     text-decoration: none;
     border-radius: 15px;
     cursor:pointer;
-    min-width:200px;
+    width:225px;
     color: var(--text-color);
-    width: auto;
     border: 1px solid var(--text-color);
     transition: transform 0.3s ease;
 }
@@ -138,10 +137,10 @@ span {
 
 
 .app img {
-    width: 100%;
+    width: 80%;
     height: auto;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
+    margin:15px;
+    border-radius: 5px;
 }
 
 .app h4 {

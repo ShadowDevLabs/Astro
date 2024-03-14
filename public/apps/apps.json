@@ -3,5 +3,145 @@
         "name": "Amazon",
         "url": "amazon.com",
         "img": "imgs/amazon.webp"
+    },
+    {
+        "name": "Amazon Luna",
+        "url": "https://luna.amazon.com/",
+        "img": "imgs/amazon-luna.webp"
+    },
+    {
+        "name": "Android",
+        "url": "https://now.gg/play/uncube/7074/now",
+        "img": "imgs/android.webp"
+    },
+    {
+        "name": "Aptoide",
+        "url": "https://now.gg/iframe/snippet?app_pkg=com.aptoide.partners.nowgg.store&partner=astro",
+        "img": "imgs/aptoide.webp"
+    },
+    {
+        "name": "ChatGPT (Alt)",
+        "url": "https://chat.shuttleai.app/",
+        "img": "imgs/chatgpt.webp"
+    },
+    {
+        "name": "Chess.com",
+        "url": "chess.com",
+        "img": "imgs/chess.webp"
+    },
+    {
+        "name": "Cool Math Games",
+        "url": "coolmathgames.com",
+        "img": "imgs/coolmath.webp"
+    },
+    {
+        "name": "Discord",
+        "url": "discord.com/app",
+        "img": "imgs/discord.webp"
+    },
+    {
+        "name": "Tiktok",
+        "url": "tiktok.com",
+        "img": "imgs/placeholder.webp"
+    },
+    {
+        "name": "Whatsapp",
+        "url": "whatsapp.com",
+        "img": "imgs/placeholder.webp"
+    },
+    {
+        "name": "Y8 Games",
+        "url": "y8.com",
+        "img": "imgs/placeholder.webp"
+    },
+    {
+        "name": "Poki",
+        "url": "poki.com",
+        "img": "imgs/poki.webp"
+    },
+    {
+        "name": "DuckDuckGO",
+        "url": "duckduckgo.com",
+        "img": "imgs/duckduckgo.webp"
+    },
+    {
+        "name": "Roblox",
+        "url": "websitesball.com",
+        "img": "https://cdn2.steamgriddb.com/icon_thumb/b7f5d38aaa4e8a553f49c085ee06bb15.png"
+    },
+    {
+        "name": "Google",
+        "url": "google.com",
+        "img": "imgs/google.webp"
+    },
+    {
+        "name": "ESPN",
+        "url": "espn.com",
+        "img": "imgs/espn.webp"
+    },
+    {
+        "name": "Geforce Now",
+        "url": "geforcenow.com",
+        "img": "imgs/geforce-now.webp"
+    },
+    {
+        "name": "Github",
+        "url": "github.com",
+        "img": "imgs/placeholder.webp"
+    },
+    {
+        "name": "VSCODE",
+        "url": "visualstudio.com",
+        "img": "imgs/placeholder.webp"
+    },
+    {
+        "name": "Google Gemini",
+        "url": "gemini.google.com",
+        "img": "imgs/placeholder.webp"
+    },
+    {
+        "name": "NowGG.nl",
+        "url": "nowgg.nl",
+        "img": "imgs/placeholder.webp"
+    },
+    {
+        "name": "NowGG.me",
+        "url": "nowgg.me",
+        "img": "imgs/placeholder.webp"
+    },
+    {
+        "name": "Spotify",
+        "url": "spotify.com",
+        "img": "imgs/placeholder.webp"
+    },
+    {
+        "name": "Paramount Plus",
+        "url": "paramountplus.com",
+        "img": "imgs/placeholder.webp"
+    },
+    {
+        "name": "Netflix",
+        "url": "netflix.com",
+        "img": "imgs/placeholder.webp"
+    },
+    {
+        "name": "Pinterest",
+        "url": "pinterest.com",
+        "img": "imgs/placeholder.webp"
+    },
+    {
+        "name": "Twitch",
+        "url": "twitch.tv",
+        "img": "imgs/placeholder.webp"
+    },
+    {
+        "name": "Twitter",
+        "url": "twitter.com",
+        "img": "imgs/placeholder.webp"
+    },
+    {
+        "name": "Movie Web",
+        "url": "movieweb.com",
+        "img": "imgs/placeholder.webp"
     }
 ]

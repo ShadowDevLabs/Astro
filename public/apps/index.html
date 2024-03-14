@@ -17,34 +17,31 @@
     </head>
     <div class="nav">
         <div class="heading">
-            <h1>Astro｜Games</h1>
+            <h1>Astro｜Apps</h1>
         </div>
         <div class="nav-links">
             <a href="/index.html"><span class="material-symbols-outlined">home</span> Home</a>
-            <a href="/"><span class="material-symbols-outlined">search</span> Search</a>
+            <a href="/apps"><span class="material-symbols-outlined">apps</span> Apps</a>
             <a href="/g/index.html"><span class="material-symbols-outlined">stadia_controller</span> Games</a>
-            <a><span class="material-symbols-outlined">settings</span> Settings</a>
+            <a href="/settings"><span class="material-symbols-outlined">settings</span> Settings</a>
         </div>
     </div>
     <div class="container">
         <h3>Apps</h3>
-        <input id="gsearch" type="text" placeholder="Search Games" />
+        <input id="appssearch" type="text" placeholder="Search Apps" />
     </div>
     <div class="app-container">
-        <a class="app">
-            <img src="imgs/amazon.webp">
-            <h4>Amazon</h4>
-        </a>
+        <!-- Apps will be rendered here-->
     </div>
     <div>
         <p id="uv-error"></p>
         <pre id="uv-error-code"></pre>
     </div>
 
-    <script src="uv/uv.bundle.js" defer></script>
-    <script src="uv/uv.config.js" defer></script>
-    <script src="uv/register-sw.js" defer></script>
-    <script src="uv/search.js" defer></script>
-    <script src="script.js"></script>
-    <script src="uv/proxy.js" defer></script>
+    <script src="/uv/uv.bundle.js" defer></script>
+    <script src="/uv/uv.config.js" defer></script>
+    <script src="/uv/register-sw.js" defer></script>
+    <script src="/uv/search.js" defer></script>
+    <script src="apps.js"></script>
+    <script src="/uv/proxy.js" defer></script>
 </body>

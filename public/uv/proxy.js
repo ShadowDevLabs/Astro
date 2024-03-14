@@ -20,7 +20,7 @@ async function handleSubmit(event) {
 async function openURL(link) {
   try {
     await registerServiceWorker;
-    const url = search(link, searchEngine.value);
+    const url = search(link, "https://www.google.com/search?q=%s");
     location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
   } catch (err) {
     error.textContent = "Failed to register service worker.";
