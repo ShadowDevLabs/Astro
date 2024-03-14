@@ -1,22 +1,30 @@
-const { createBareServer } =  require("@tomphttp/bare-server-node");
-const express = require("express");
-const { createServer } = require("node:http");
-const { uvPath } = require("@titaniumnetwork-dev/ultraviolet");
-const { hostname } = require("node:os");
+import compression from "compression";
+import express from "express";
+import { createServer } from "http";
+import { fileURLToPath } from "url";
+import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
+import { join } from "path";
+import { hostname } from "os";
+import cors from "cors";
+import { createBareServer } from "@tomphttp/bare-server-node";
+const publicPath = fileURLToPath(new URL("./public/", import.meta.url));
+
+let port = 8080;
 
 const bare = createBareServer("/bare/");
 const app = express();
-const path = require('path');
+const server = createServer();
 
-app.use(express.static("./public"));
+app.use(compression());
+app.use(cors());
+app.use(express.static(publicPath, { maxAge: "1y" }));
+
 app.use("/uv/", express.static(uvPath));
 
-app.get('*', function(req, res) {
-  res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+app.use((req, res) => {
+  res.status(404);
+  res.sendFile(join(publicPath, "404.html"));
 });
-
-
-const server = createServer();
 
 server.on("request", (req, res) => {
   if (bare.shouldRoute(req)) {
@@ -34,15 +42,9 @@ server.on("upgrade", (req, socket, head) => {
   }
 });
 
-let port = parseInt(process.env.PORT || "");
-
-if (isNaN(port)) port = 8080;
-
 server.on("listening", () => {
   const address = server.address();
 
-  // by default we are listening on 0.0.0.0 (every interface)
-  // we just need to list a few
   console.log("Listening on:");
   console.log(`\thttp://localhost:${address.port}`);
   console.log(`\thttp://${hostname()}:${address.port}`);
@@ -53,7 +55,6 @@ server.on("listening", () => {
   );
 });
 
-// https://expressjs.com/en/advanced/healthcheck-graceful-shutdown.html
 process.on("SIGINT", shutdown);
 process.on("SIGTERM", shutdown);
 
@@ -61,9 +62,6 @@ function shutdown() {
   console.log("SIGTERM signal received: closing HTTP server");
   server.close();
   bare.close();
-  process.exit(0);
 }
 
-server.listen({
-  port,
-});
+server.listen(port);

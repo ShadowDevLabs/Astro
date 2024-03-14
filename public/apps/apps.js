@@ -4,27 +4,46 @@ async function renderApps() {
         const appsData = await response.json();
 
         const appContainer = document.querySelector('.app-container');
+        const searchInput = document.getElementById('appssearch');
 
-        appsData.forEach(app => {
+        function filterApps(searchTerm) {
+            const filteredApps = appsData.filter(app => {
+                return app.name.toLowerCase().includes(searchTerm.toLowerCase());
+            });
+            renderFilters(filteredApps);
+        }
 
-            const appLink = document.createElement('a');
-            appLink.onclick = function() {
-                openURL(app.url);
-                return false; 
-            };
-            appLink.classList.add('app');
+        function renderFilters(apps) {
+            appContainer.innerHTML = '';
 
-            const appImage = document.createElement('img');
-            appImage.src = app.img;
+            apps.forEach(app => {
+                const appLink = document.createElement('a');
+                appLink.onclick = function() {
+                    openURL(app.url);
+                    return false;
+                };
+                appLink.classList.add('app');
 
-            const appName = document.createElement('h4');
-            appName.textContent = app.name;
+                const appImage = document.createElement('img');
+                appImage.src = app.img;
 
-            appLink.appendChild(appImage);
-            appLink.appendChild(appName);
+                const appName = document.createElement('h4');
+                appName.textContent = app.name;
 
-            appContainer.appendChild(appLink);
+                appLink.appendChild(appImage);
+                appLink.appendChild(appName);
+
+                appContainer.appendChild(appLink);
+            });
+        }
+
+        renderFilters(appsData);
+
+        searchInput.addEventListener('input', function(event) {
+            const searchTerm = event.target.value;
+            filterApps(searchTerm);
         });
+
     } catch (error) {
         console.error('Error fetching apps:', error);
     }

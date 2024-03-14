@@ -42,17 +42,17 @@
     {
         "name": "Tiktok",
         "url": "tiktok.com",
-        "img": "imgs/placeholder.webp"
+        "img": "imgs/tiktok.webp"
     },
     {
         "name": "Whatsapp",
         "url": "whatsapp.com",
-        "img": "imgs/placeholder.webp"
+        "img": "imgs/whatsapp.webp"
     },
     {
         "name": "Y8 Games",
         "url": "y8.com",
-        "img": "imgs/placeholder.webp"
+        "img": "imgs/y8.webp"
     },
     {
         "name": "Poki",
@@ -87,61 +87,56 @@
     {
         "name": "Github",
         "url": "github.com",
-        "img": "imgs/placeholder.webp"
+        "img": "imgs/github.webp"
     },
     {
         "name": "VSCODE",
         "url": "visualstudio.com",
-        "img": "imgs/placeholder.webp"
+        "img": "imgs/vscode.webp"
     },
     {
         "name": "Google Gemini",
         "url": "gemini.google.com",
-        "img": "imgs/placeholder.webp"
+        "img": "imgs/gemini.png"
     },
     {
         "name": "NowGG.nl",
         "url": "nowgg.nl",
-        "img": "imgs/placeholder.webp"
+        "img": "imgs/astroid.webp"
     },
     {
         "name": "NowGG.me",
         "url": "nowgg.me",
-        "img": "imgs/placeholder.webp"
+        "img": "imgs/shuttle.webp"
     },
     {
         "name": "Spotify",
         "url": "spotify.com",
-        "img": "imgs/placeholder.webp"
+        "img": "imgs/spotify.webp"
     },
     {
         "name": "Paramount Plus",
         "url": "paramountplus.com",
-        "img": "imgs/placeholder.webp"
-    },
-    {
-        "name": "Netflix",
-        "url": "netflix.com",
-        "img": "imgs/placeholder.webp"
+        "img": "imgs/paramount.webp"
     },
     {
         "name": "Pinterest",
         "url": "pinterest.com",
-        "img": "imgs/placeholder.webp"
+        "img": "imgs/pinterest.webp"
     },
     {
         "name": "Twitch",
         "url": "twitch.tv",
-        "img": "imgs/placeholder.webp"
+        "img": "imgs/twitch-tv.webp"
     },
     {
         "name": "Twitter",
         "url": "twitter.com",
-        "img": "imgs/placeholder.webp"
+        "img": "imgs/twitter.webp"
     },
     {
         "name": "Movie Web",
         "url": "movieweb.com",
-        "img": "imgs/placeholder.webp"
+        "img": "imgs/movie-web.webp"
     }
 ]
