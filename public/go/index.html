@@ -30,8 +30,16 @@
             <a href="/settings"><span class="material-symbols-outlined">settings</span> Settings</a>
         </div>
     </div>
-    <iframe src="" frameborder="0"></iframe>
-
+    <iframe id="iframe" src="" frameborder="0"></iframe>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const storedUrl = localStorage.getItem('url');
+            if (storedUrl) {
+                const iframe = document.getElementById('iframe');
+                iframe.src = storedUrl;
+            }
+        });
+    </script>
     <script src="uv/uv.bundle.js" defer></script>
     <script src="uv/uv.config.js" defer></script>
     <script src="uv/register-sw.js" defer></script>

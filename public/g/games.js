@@ -2,13 +2,16 @@
     const response = await fetch('games.json');
     const games = await response.json();
     const container = document.querySelector('.gcontainer');
-    const gamecdn = "https://assets.3kh0.net/";
+    const gamecdn = "/g/files/";
 
     function renderGame(game) {
-        const gameUrl = gamecdn + game.root + "/" + game.file;
+        var gameUrl = gamecdn + game.root + "/" + game.file;
         const link = document.createElement('a');
         link.className = 'game';
-        link.href = gameUrl;
+        link.addEventListener('click', (event) => {
+            localStorage.setItem('url', `${gameUrl}`);
+            window.location.href = '/go';
+        });
 
         const img = document.createElement('img');
         img.dataset.src = gamecdn + game.root + "/" + game.img;
@@ -20,40 +23,56 @@
 
         link.appendChild(img);
         link.appendChild(h3);
+        link.dataset.gameName = game.name;
         container.appendChild(link);
     }
 
-    function renderGames(query) {
+    function loadAllGames() {
+        container.innerHTML = '';
+        games.forEach(renderGame);
+        lazyLoadImages(); 
+    }
+
+    function searchGames(query) {
         container.innerHTML = '';
         games.forEach(game => {
-            if (game.name.toLowerCase().includes(query.toLowerCase())) {
+            const gameMatches = game.name.toLowerCase().includes(query.toLowerCase());
+            if (gameMatches) {
                 renderGame(game);
             }
+        });
+        lazyLoadImages(); 
+    }
+
+    function lazyLoadImages() {
+        const lazyImages = document.querySelectorAll('.lazy');
+        const lazyImgObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const lazyImage = entry.target;
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.remove('lazy');
+                    lazyImgObserver.unobserve(lazyImage);
+                }
+            });
+        });
+
+        lazyImages.forEach(image => {
+            lazyImgObserver.observe(image);
         });
     }
 
     const searchInput = document.querySelector('#gsearch');
     searchInput.addEventListener('input', () => {
-        renderGames(searchInput.value);
+        const query = searchInput.value.trim();
+        if (query === '') {
+            loadAllGames();
+        } else {
+            searchGames(query);
+        }
     });
 
-    renderGames('');
-
-    const lazyImages = document.querySelectorAll('.lazy');
-    const lazyImgObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const lazyImage = entry.target;
-                lazyImage.src = lazyImage.dataset.src;
-                lazyImage.classList.remove('lazy');
-                lazyImgObserver.unobserve(lazyImage);
-            }
-        });
-    });
-
-    lazyImages.forEach(image => {
-        lazyImgObserver.observe(image);
-    });
+    loadAllGames();
 
     const loadingContainer = document.getElementById('loading-container');
     loadingContainer.style.display = 'none'; 

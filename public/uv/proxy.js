@@ -36,3 +36,28 @@ const registerServiceWorker = registerSW().catch((err) => {
 });
 
 form.addEventListener("submit", handleSubmit);
+
+
+if ('serviceWorker' in navigator) {
+  var proxySetting = localStorage.getItem('proxy') || 'uv';
+  let swConfig = {
+    'uv': { file: '/uv.js', config: __uv$config },
+    'dynamic': { file: '/dyn.js', config: __dynamic$config }
+  };
+
+  let { file: swFile, config: swConfigSettings } = swConfig[proxySetting];
+
+  navigator.serviceWorker.register(swFile, { scope: swConfigSettings.prefix })
+    .then((registration) => {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        
+        let encodedUrl = swConfigSettings.prefix + crypts.encode(search(address.value));;
+        location.href = encodedUrl;
+      });
+    })
+    .catch((error) => {
+      console.error('ServiceWorker registration failed:', error);
+    });
+}
