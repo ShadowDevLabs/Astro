@@ -1,9 +1,10 @@
 :root {
   --primary-color: #037ef9;
-  --secondary-color: #020019;
+  --secondary-color: #03011c;
   --accent-color: #003366;
-  --text-color: #FFFFFF;
-  --contrast-color: #0F0F0F;
+  --text-color: #b3d0fe;
+  --contrast-color: #000000;
+  --hover-color:#3d85f7;
 }
 
 
@@ -35,12 +36,19 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: transparent;
   padding: 5px 20px;
   margin-top: 0px;
 }
 
 .nav .heading h1 {
-  font-size: 32px;
+  font-size: 30px;
+  background: linear-gradient(135deg, var(--primary-color), var(--text-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  cursor:pointer;
+  margin-bottom: 0;
 }
 
 .nav .nav-links a {
@@ -48,15 +56,31 @@ body {
   text-decoration: none;
   padding: 10px;
   cursor: pointer;
-  border-radius: 15px;
-  border: 1px solid var(--text-color);
+  cursor:pointer;
   margin-right: 20px;
   transition: all 0.5s ease;
 }
 
-.nav .nav-links a:hover {
-  background-color: var(--accent-color);
+.nav .nav-links .current {
+  color: var(--primary-color);
+  position: relative;
 }
+
+.nav .nav-links .current::before {
+  content: '';
+  position: absolute;
+  bottom: -2px; 
+  left: 0;
+  width: 100%;
+  height: 2px; 
+  background-color: var(--primary-color); 
+}
+
+
+.nav .nav-links a:hover {
+  color: var(--hover-color);
+}
+
 
 
 span {
@@ -65,7 +89,7 @@ span {
 
 .container {
   max-width: 750px;
-  margin: 0 auto;
+  margin: 5vw auto;
   text-align: center;
 }
 
@@ -121,7 +145,7 @@ span {
 .shortcuts {
   display: flex;
   flex-wrap: wrap;
-  margin-top:1vw;
+  margin: 1vw auto;
   justify-content: flex-start;
   gap: 10px;
 }
@@ -158,6 +182,61 @@ span {
 }
 
 
+
+/* Error  */
+
 .container.error h1{
   margin-bottom:-1vw;
+}
+
+
+
+/* Mobile UI */
+
+@media only screen and (max-width: 768px) {
+  .nav .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--secondary-color);
+    text-align: center;
+    padding: 10px 0;
+    z-index: 999;
+    flex-direction: column;
+  }
+
+  .nav .nav-links.active {
+    display: flex;
+  }
+
+  .nav .nav-links a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .nav .burger {
+    display: block;
+  }
+
+  .shortcuts {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .shortcut {
+    width: calc(33.33% - 20px); 
+    margin: 10px;
+  }
+
+  .shortcut h3 {
+    font-size: 14px;
+  }
+
+  .shortcut img {
+    width: 40px;
+    margin-top: 10px;
+  }
 }
