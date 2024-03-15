@@ -13,9 +13,9 @@ const bare = createBareServer("/bare/");
 const app = express();
 
 app.use(express.static(publicPath, { maxAge: "1y" }));
+app.use(express.static(cdnPath, { maxAge: "1y" }));
 app.use("/uv/", express.static(uvPath));
 app.use("/dynamic/", express.static(dynamicPath));
-app.use("/cdn/", express.static(cdnPath));
 app.get('*', function(req, res) {
   res.send('404');
 });
