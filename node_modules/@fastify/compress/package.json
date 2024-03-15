@@ -1,0 +1,64 @@
+{
+  "name": "@fastify/compress",
+  "version": "6.5.0",
+  "description": "Fastify compression utils",
+  "main": "index.js",
+  "type": "commonjs",
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "@fastify/accept-negotiator": "^1.1.0",
+    "fastify-plugin": "^4.5.0",
+    "into-stream": "^6.0.0",
+    "mime-db": "^1.52.0",
+    "minipass": "^7.0.2",
+    "peek-stream": "^1.1.3",
+    "pump": "^3.0.0",
+    "pumpify": "^2.0.1"
+  },
+  "devDependencies": {
+    "@fastify/pre-commit": "^2.0.2",
+    "@types/node": "^20.4.2",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "adm-zip": "^0.5.10",
+    "fastify": "^4.19.2",
+    "jsonstream": "^1.0.3",
+    "standard": "^17.1.0",
+    "tap": "^16.3.7",
+    "tsd": "^0.29.0",
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "coverage": "npm run test:unit -- --coverage-report=html",
+    "lint": "standard",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:fix:typescript": "npm run lint:fix -- --parser @typescript-eslint/parser --plugin @typescript-eslint/eslint-plugin \"**/*.d.ts\"",
+    "test": "npm run test:unit && npm run test:typescript",
+    "test:typescript": "tsd",
+    "test:unit": "tap",
+    "test:unit:verbose": "npm run test:unit -- -Rspec"
+  },
+  "keywords": [
+    "fastify",
+    "compression",
+    "deflate",
+    "gzip",
+    "brotli"
+  ],
+  "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fastify/fastify-compress/issues"
+  },
+  "homepage": "https://github.com/fastify/fastify-compress#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastify/fastify-compress.git"
+  },
+  "tsd": {
+    "directory": "test/types"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

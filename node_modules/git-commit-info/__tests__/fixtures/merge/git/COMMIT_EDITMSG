@@ -1,0 +1,30 @@
+My message
+
+# Conflicts:
+#	index.js
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   index.js
+#
+# ------------------------ >8 ------------------------
+# Do not modify or remove the line above.
+# Everything below it will be ignored.
+diff --git a/index.js b/index.js
+index ee8ff3a..f38f82a 100644
+--- a/index.js
++++ b/index.js
+@@ -1 +1 @@
+-console.log('orig');
++console.log('conflict');
