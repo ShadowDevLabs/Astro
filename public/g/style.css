@@ -77,3 +77,26 @@
   margin-top: 10px;
   font-size: 18px;
 }
+
+
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #333;
+  appearance: none;
+}
+
+select option {
+  padding: 8px;
+  background-color: #fff;
+  color: #333;
+}
+
+select option:hover {
+  background-color: var(--hover-color);
+  color: #fff;
+}

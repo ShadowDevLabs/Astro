@@ -1,42 +1,60 @@
-// Fetch games
-fetch('games.json')
-    .then(response => response.json())
-    .then(games => {
-        games.sort((a, b) => a.name.localeCompare(b.name));
+(async () => {
+    const response = await fetch('games.json');
+    const games = await response.json();
+    const container = document.querySelector('.gcontainer');
+    const gamecdn = "https://assets.3kh0.net/";
 
-        const container = document.querySelector('.gcontainer');
-        const gamecdn = "https://glcdn.githack.com/kaioxdev/legacy-assets/-/raw/main/";
+    function renderGame(game) {
+        const gameUrl = gamecdn + game.root + "/" + game.file;
+        const link = document.createElement('a');
+        link.className = 'game';
+        link.href = gameUrl;
 
-        function renderGames(query) {
-            container.innerHTML = '';
-            games.forEach(game => {
-                if (game.name.toLowerCase().includes(query.toLowerCase())) {
-                    const link = document.createElement('a');
-                    link.className = 'game';
-                    link.href = gamecdn + game.root + "/" + game.file;
-                    const img = document.createElement('img');
-                    img.src = gamecdn + game.root + "/" + game.img;
+        const img = document.createElement('img');
+        img.dataset.src = gamecdn + game.root + "/" + game.img;
+        img.loading = 'lazy';
+        img.classList.add('lazy');
 
-                    const h3 = document.createElement('h3');
-                    h3.textContent = game.name;
+        const h3 = document.createElement('h3');
+        h3.textContent = game.name;
 
-                    link.addEventListener('click', () => {
-                        localStorage.setItem('game', JSON.stringify(game));
-                    });
+        link.appendChild(img);
+        link.appendChild(h3);
+        container.appendChild(link);
+    }
 
-                    link.appendChild(img);
-                    link.appendChild(h3);
-
-                    container.appendChild(link);
-                }
-            });
-        }
-
-        renderGames('');
-
-        const searchInput = document.querySelector('#gsearch');
-        searchInput.addEventListener('input', () => {
-            renderGames(searchInput.value);
+    function renderGames(query) {
+        container.innerHTML = '';
+        games.forEach(game => {
+            if (game.name.toLowerCase().includes(query.toLowerCase())) {
+                renderGame(game);
+            }
         });
-    })
-    .catch(error => console.error('Error:', error));
+    }
+
+    const searchInput = document.querySelector('#gsearch');
+    searchInput.addEventListener('input', () => {
+        renderGames(searchInput.value);
+    });
+
+    renderGames('');
+
+    const lazyImages = document.querySelectorAll('.lazy');
+    const lazyImgObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const lazyImage = entry.target;
+                lazyImage.src = lazyImage.dataset.src;
+                lazyImage.classList.remove('lazy');
+                lazyImgObserver.unobserve(lazyImage);
+            }
+        });
+    });
+
+    lazyImages.forEach(image => {
+        lazyImgObserver.observe(image);
+    });
+
+    const loadingContainer = document.getElementById('loading-container');
+    loadingContainer.style.display = 'none'; 
+})().catch(error => console.error('Error fetching games:', error));

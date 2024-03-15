@@ -1,30 +1,26 @@
-import compression from "compression";
-import express from "express";
-import { createServer } from "http";
-import { fileURLToPath } from "url";
-import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
-import { join } from "path";
-import { hostname } from "os";
-import cors from "cors";
 import { createBareServer } from "@tomphttp/bare-server-node";
-const publicPath = fileURLToPath(new URL("./public/", import.meta.url));
+import express from "express";
+import { createServer } from "node:http";
+import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
+import { dynamicPath } from "@nebula-services/dynamic";
+import { hostname } from "node:os";
+import { fileURLToPath } from "url";
 
-let port = 8080;
+const publicPath = fileURLToPath(new URL("./public/", import.meta.url));
+const cdnPath = fileURLToPath(new URL("./3kh0-Assets/", import.meta.url)); 
 
 const bare = createBareServer("/bare/");
 const app = express();
-const server = createServer();
 
-app.use(compression());
-app.use(cors());
 app.use(express.static(publicPath, { maxAge: "1y" }));
-
 app.use("/uv/", express.static(uvPath));
-
-app.use((req, res) => {
-  res.status(404);
-  res.sendFile(join(publicPath, "404.html"));
+app.use("/dynamic/", express.static(dynamicPath));
+app.use("/cdn/", express.static(cdnPath));
+app.get('*', function(req, res) {
+  res.send('404');
 });
+
+const server = createServer();
 
 server.on("request", (req, res) => {
   if (bare.shouldRoute(req)) {
@@ -41,6 +37,10 @@ server.on("upgrade", (req, socket, head) => {
     socket.end();
   }
 });
+
+let port = parseInt(process.env.PORT || "");
+
+if (isNaN(port)) port = 3030;
 
 server.on("listening", () => {
   const address = server.address();
@@ -62,6 +62,9 @@ function shutdown() {
   console.log("SIGTERM signal received: closing HTTP server");
   server.close();
   bare.close();
+  process.exit(0);
 }
 
-server.listen(port);
+server.listen({
+  port,
+});
