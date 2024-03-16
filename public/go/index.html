@@ -40,10 +40,22 @@
             }
         });
     </script>
-    <script src="uv/uv.bundle.js" defer></script>
-    <script src="uv/uv.config.js" defer></script>
-    <script src="uv/register-sw.js" defer></script>
-    <script src="uv/search.js" defer></script>
-    <script src="games.js"></script>
-    <script src="uv/proxy.js" defer></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("/sw.js", {
+                        scope: "/~/"
+                    })
+                    .then(() => {
+                        console.log("Service worker registered successfully");
+                    });
+            });
+        }
+    </script>
+    <script src="/uv/uv.bundle.js" defer></script>
+    <script src="/uv/uv.config.js" defer></script>
+    <script src="/uv/search.js" defer></script>
+    <script src="/dynamic/dynamic.config.js" defer></script>
+    <script src="iframe.js" defer></script>
 </body>

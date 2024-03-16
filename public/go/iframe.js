@@ -1,9 +1,7 @@
 const form = document.getElementById("uv-form");
 const address = document.getElementById("uv-address");
 const searchEngine = document.getElementById("uv-search-engine");
-const error = document.getElementById("uv-error");
-const errorCode = document.getElementById("uv-error-code");
-
+const iframe = document.getElementById('iframe');
 async function handleSubmit(event) {
   event.preventDefault();
   try {
@@ -15,11 +13,8 @@ async function handleSubmit(event) {
     } else if (proxy === 'dynamic') {
       encodedUrl = __dynamic$config.prefix + "route?url=" + url;
     }
-    localStorage.setItem('url', encodedUrl);
-    location.href="/go/"
+    iframe.src = encodedUrl;
   } catch (err) {
-    error.textContent = "Failed to register service worker.";
-    errorCode.textContent = err.toString();
     throw err;
   }
 }
@@ -35,8 +30,6 @@ async function openURL(link) {
       encodedUrl = __dynamic$config.prefix + "route?url=" + url;
     }
   } catch (err) {
-    error.textContent = "Failed to register service worker.";
-    errorCode.textContent = err.toString();
     throw err;
   }
 }
