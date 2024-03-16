@@ -64,7 +64,21 @@
    <script src="uv/uv.config.js" defer></script>
    <script src="dynamic/dynamic.config.js" defer></script>
    <script src="dynamic/dynamic.worker.js" defer></script>
-   
+   <!-- <script src="dynamic/sw.js" defer></script> don't execute service workers in non-sw contexts! !-->
+   <!-- putting in sw context here instead 👇🏽-->
+   <script>
+      if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("/sw.js", {
+          scope: "/~/"
+        })
+        .then(() => {
+          console.log("Service worker registered successfully");
+        });
+    });
+      }
+   </script>
    <script src="uv/search.js" defer></script>
    <script src="script.js"></script>
    <script src="uv/proxy.js" defer></script>
