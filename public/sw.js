@@ -6,20 +6,36 @@ importScripts("/uv/uv.config.js");
 importScripts(__uv$config.sw || "/uv/uv.sw.js");
 
 const uv = new UVServiceWorker(); // init uv sw
-const dynamic = new Dynamic();
+self.dynamic = new Dynamic(self.__dynamic$config);
 
-self.dynamic = dynamic;
-
-self.addEventListener('fetch',
-    event => {
-        event.respondWith(
-            (async function() {
-                if (await dynamic.route(event)) {
-                    return await dynamic.fetch(event);
-                }
-
-                return await fetch(event.request);
-            })()
-        );
+self.addEventListener("fetch", (event) => { // add code to route between UV and dynamic
+    if (
+      event.request.url.startsWith(location.origin + self.__dynamic$config.prefix)
+    ) {
+      event.respondWith(
+        (async function () {
+          try {
+            await dynPromise;
+          } catch (error) {}
+          if (await self.dynamic.route(event)) {
+            return await self.dynamic.fetch(event);
+          }
+          await fetch(event.request);
+        })()
+      );
+    } else if (
+      event.request.url.startsWith(location.origin + __uv$config.prefix)
+    ) {
+      event.respondWith(
+        (async function () {
+          return await uv.fetch(event);
+        })()
+      );
+    } else {
+      event.respondWith(
+        (async function () {
+          return await fetch(event.request);
+        })()
+      );
     }
-);
+});

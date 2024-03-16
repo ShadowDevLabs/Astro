@@ -63,7 +63,12 @@
    <script src="uv/uv.bundle.js" defer></script>
    <script src="uv/uv.config.js" defer></script>
    <script src="dynamic/dynamic.config.js" defer></script>
-   <script src="dynamic/dynamic.worker.js" defer></script>
+
+   <!-- why is the dynamic worker being loaded here? 👇🏽
+      <script src="dynamic/dynamic.worker.js" defer></script>
+   -->
+
+
    <!-- <script src="dynamic/sw.js" defer></script> don't execute service workers in non-sw contexts! !-->
    <!-- putting in sw context here instead 👇🏽-->
    <script>

@@ -4,7 +4,7 @@ const searchEngine = document.getElementById("uv-search-engine");
 const error = document.getElementById("uv-error");
 const errorCode = document.getElementById("uv-error-code");
 
-class crypts {
+/* Reduandant class crypts {
   static encode(str) {
     return encodeURIComponent(
       str
@@ -26,9 +26,9 @@ class crypts {
         .join("")
     );
   }
-}
+} */
 
-if ('serviceWorker' in navigator) {
+/* if ('serviceWorker' in navigator) {
   var proxySetting = localStorage.getItem('proxy') || 'uv';
   let swConfig = {
     'uv': { file: '/uv/sw.js', config: __uv$config },
@@ -38,12 +38,17 @@ if ('serviceWorker' in navigator) {
   let { file: swFile, config: swConfigSettings } = swConfig[proxySetting];
 
   navigator.serviceWorker.register(swFile, { scope: swConfigSettings.prefix })
-}
+} */
 
 async function handleSubmit(event) {
   event.preventDefault();
   try {
-    let encodedUrl = swConfigSettings.prefix + crypts.encode(search(address.value, searchEngine.value));;
+    if (localStorage.getItem('proxy') || 'uv' === 'uv') {
+      let encodedUrl = window.__uv$config.prefix + window.__uv$config.encodeUrl(address.value);
+    } else {
+      let encodedUrl = __dynamic$config.prefix + "route?url=" + address.value
+    }
+    // let encodedUrl = swConfigSettings.prefix + crypts.encode(search(address.value, searchEngine.value));
     location.href = encodedUrl;
   } catch (err) {
     error.textContent = "Failed to register service worker.";
@@ -54,7 +59,11 @@ async function handleSubmit(event) {
 
 async function openURL(link) {
   try {
-    let encodedUrl = swConfigSettings.prefix + crypts.encode(search(link, "https://www.google.com/search?q=%s"));;
+    if (localStorage.getItem('proxy') || 'uv' === 'uv') {
+      let encodedUrl = window.__uv$config.prefix + window.__uv$config.encodeUrl(address.value);
+    } else {
+      let encodedUrl = __dynamic$config.prefix + "route?url=" + address.value
+    }
     location.href = encodedUrl;
   } catch (err) {
     error.textContent = "Failed to register service worker.";
