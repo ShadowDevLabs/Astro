@@ -58,11 +58,12 @@
   color: var(--text-color);
   width:200px;
   border: 1px solid var(--text-color);
+  cursor:pointer;
   transition: transform 0.3s ease;
 }
 
 .game:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 

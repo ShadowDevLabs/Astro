@@ -2,67 +2,67 @@
     {
         "name": "Amazon",
         "url": "amazon.com",
-        "img": "imgs/amazon.webp"
+        "img": "/icons/apps/amazon.webp"
     },
     {
         "name": "Amazon Luna",
         "url": "https://luna.amazon.com/",
-        "img": "imgs/amazon-luna.webp"
+        "img": "/icons/apps/amazon-luna.webp"
     },
     {
         "name": "Android",
         "url": "https://now.gg/play/uncube/7074/now",
-        "img": "imgs/android.webp"
+        "img": "/icons/apps/android.webp"
     },
     {
         "name": "Aptoide",
         "url": "https://now.gg/iframe/snippet?app_pkg=com.aptoide.partners.nowgg.store&partner=astro",
-        "img": "imgs/aptoide.webp"
+        "img": "/icons/apps/aptoide.webp"
     },
     {
         "name": "ChatGPT (Alt)",
         "url": "https://chat.shuttleai.app/",
-        "img": "imgs/chatgpt.webp"
+        "img": "/icons/apps/chatgpt.webp"
     },
     {
         "name": "Chess.com",
         "url": "chess.com",
-        "img": "imgs/chess.webp"
+        "img": "/icons/apps/chess.webp"
     },
     {
         "name": "Cool Math Games",
         "url": "coolmathgames.com",
-        "img": "imgs/coolmath.webp"
+        "img": "/icons/apps/coolmath.webp"
     },
     {
         "name": "Discord",
         "url": "discord.com/app",
-        "img": "imgs/discord.webp"
+        "img": "/icons/apps/discord.webp"
     },
     {
         "name": "Tiktok",
         "url": "tiktok.com",
-        "img": "imgs/tiktok.webp"
+        "img": "/icons/apps/tiktok.webp"
     },
     {
         "name": "Whatsapp",
         "url": "whatsapp.com",
-        "img": "imgs/whatsapp.webp"
+        "img": "/icons/apps/whatsapp.webp"
     },
     {
         "name": "Y8 Games",
         "url": "y8.com",
-        "img": "imgs/y8.webp"
+        "img": "/icons/apps/y8.webp"
     },
     {
         "name": "Poki",
         "url": "poki.com",
-        "img": "imgs/poki.webp"
+        "img": "/icons/apps/poki.webp"
     },
     {
         "name": "DuckDuckGO",
         "url": "duckduckgo.com",
-        "img": "imgs/duckduckgo.webp"
+        "img": "/icons/apps/duckduckgo.webp"
     },
     {
         "name": "Roblox",
@@ -72,71 +72,71 @@
     {
         "name": "Google",
         "url": "google.com",
-        "img": "imgs/google.webp"
+        "img": "/icons/apps/google.webp"
     },
     {
         "name": "ESPN",
         "url": "espn.com",
-        "img": "imgs/espn.webp"
+        "img": "/icons/apps/espn.webp"
     },
     {
         "name": "Geforce Now",
         "url": "geforcenow.com",
-        "img": "imgs/geforce-now.webp"
+        "img": "/icons/apps/geforce-now.webp"
     },
     {
         "name": "Github",
         "url": "github.com",
-        "img": "imgs/github.webp"
+        "img": "/icons/apps/github.webp"
     },
     {
         "name": "VSCODE",
         "url": "visualstudio.com",
-        "img": "imgs/vscode.webp"
+        "img": "/icons/apps/vscode.webp"
     },
     {
         "name": "Google Gemini",
         "url": "gemini.google.com",
-        "img": "imgs/gemini.png"
+        "img": "/icons/apps/gemini.png"
     },
     {
         "name": "NowGG.nl",
         "url": "nowgg.nl",
-        "img": "imgs/astroid.webp"
+        "img": "/icons/apps/astroid.webp"
     },
     {
         "name": "NowGG.me",
         "url": "nowgg.me",
-        "img": "imgs/shuttle.webp"
+        "img": "/icons/apps/shuttle.webp"
     },
     {
         "name": "Spotify",
         "url": "spotify.com",
-        "img": "imgs/spotify.webp"
+        "img": "/icons/apps/spotify.webp"
     },
     {
         "name": "Paramount Plus",
         "url": "paramountplus.com",
-        "img": "imgs/paramount.webp"
+        "img": "/icons/apps/paramount.webp"
     },
     {
         "name": "Pinterest",
         "url": "pinterest.com",
-        "img": "imgs/pinterest.webp"
+        "img": "/icons/apps/pinterest.webp"
     },
     {
         "name": "Twitch",
         "url": "twitch.tv",
-        "img": "imgs/twitch-tv.webp"
+        "img": "/icons/apps/twitch-tv.webp"
     },
     {
         "name": "Twitter",
         "url": "twitter.com",
-        "img": "imgs/twitter.webp"
+        "img": "/icons/apps/twitter.webp"
     },
     {
         "name": "Movie Web",
         "url": "movieweb.com",
-        "img": "imgs/movie-web.webp"
+        "img": "/icons/apps/movie-web.webp"
     }
 ]

@@ -49,8 +49,10 @@
 .input-field {
   width: calc(100% - 20px);
   padding: 8px;
+  background-color: transparent;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  color:var(--text-color);
+  border: 1px solid var(--text-color);
   border-radius: 4px;
   box-sizing: border-box;
 }

@@ -13,7 +13,7 @@ async function handleSubmit(event) {
     if (proxy === 'ultraviolet' || proxy === null) {
       encodedUrl = window.__uv$config.prefix + window.__uv$config.encodeUrl(url);
     } else if (proxy === 'dynamic') {
-      encodedUrl = __dynamic$config.prefix + "route?url=" + url;
+      encodedUrl = __dynamic$config.prefix + window.__uv$config.encodeUrl(url);
     }
     localStorage.setItem('url', encodedUrl);
     location.href="/go/"
