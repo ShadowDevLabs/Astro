@@ -1,0 +1,27 @@
+:root {
+    --primary-color: #037ef9;
+    --secondary-color: #03011c;
+    --accent-color: #003366;
+    --text-color: #b3d0fe;
+    --contrast-color: #000000;
+    --hover-color:#3d85f7;
+  }
+  
+
+:root.light {
+    --primary-color: #037ef9;       
+    --secondary-color: #d0effd;     
+    --accent-color: #66a3ff;        
+    --text-color: #000000;         
+    --contrast-color: #89afe3;      
+    --hover-color: #3d85f7;        
+}
+
+:root.purple {
+    --primary-color: #7d5fff;
+    --secondary-color: #1f0354;
+    --accent-color: #4527a0;
+    --text-color: #ffffff;
+    --contrast-color: #000000;
+    --hover-color: #a676fa;
+}

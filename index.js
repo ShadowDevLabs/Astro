@@ -7,13 +7,11 @@ import { hostname } from "node:os";
 import { fileURLToPath } from "url";
 
 const publicPath = fileURLToPath(new URL("./public/", import.meta.url));
-const cdnPath = fileURLToPath(new URL("./3kh0-Assets/", import.meta.url)); 
 
 const bare = createBareServer("/bare/");
 const app = express();
 
 app.use(express.static(publicPath, { maxAge: "1y" }));
-app.use(express.static(cdnPath, { maxAge: "1y" }));
 app.use("/uv/", express.static(uvPath));
 app.use("/dynamic/", express.static(dynamicPath));
 app.get('*', function(req, res) {
