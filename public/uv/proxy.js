@@ -30,10 +30,12 @@ async function openURL(link) {
     let encodedUrl;
     const proxy = localStorage.getItem('proxy');
     if (proxy === 'ultraviolet' || proxy === null) {
-      encodedUrl = window.__uv$config.prefix + window.__uv$config.encodeUrl(address.value);
+      encodedUrl = window.__uv$config.prefix + window.__uv$config.encodeUrl(url);
     } else if (proxy === 'dynamic') {
       encodedUrl = __dynamic$config.prefix + "route?url=" + url;
     }
+    localStorage.setItem('url', encodedUrl);
+    location.href="/go/"
   } catch (err) {
     error.textContent = "Failed to register service worker.";
     errorCode.textContent = err.toString();
