@@ -25,3 +25,21 @@
     --contrast-color: #000000;
     --hover-color: #a676fa;
 }
+
+:root.shadow {
+    --primary-color: #6c3da3;
+    --secondary-color: #262648;
+    --accent-color: #4d4d86;
+    --text-color: #ffffff;
+    --contrast-color: #000000;
+    --hover-color: #a676fa;
+}
+
+:root.crimson {
+    --primary-color: #960032; 
+    --secondary-color: #1c0112; 
+    --accent-color: #ff5733; 
+    --text-color: #e8e8e8; 
+    --contrast-color: #000000; 
+    --hover-color: #ff0055; 
+}
