@@ -26,6 +26,8 @@ async function renderApps() {
 
                 const appImage = document.createElement('img');
                 appImage.src = app.img;
+                appImage.loading = 'lazy';
+
 
                 const appName = document.createElement('h4');
                 appName.textContent = app.name;
