@@ -55,6 +55,13 @@
             });
         }
     </script>
+    <script>
+        const searchEngineUV = document.getElementById('uv-search-engine');
+        const chosenSearchEngine = localStorage.getItem('searchEngine');
+        if (chosenSearchEngine) {
+           searchEngineUV.value = chosenSearchEngine;
+        }
+     </script>
     <script src="/uv/uv.bundle.js" defer></script>
     <script src="/uv/uv.config.js" defer></script>
     <script src="/uv/search.js" defer></script>

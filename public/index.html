@@ -68,15 +68,22 @@
    <script src="/dynamic/dynamic.config.js" defer></script>
    <script>
       if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker
-        .register("/sw.js", {
-          scope: "/~/"
-        })
-        .then(() => {
-          console.log("Service worker registered successfully");
-        });
-    });
+         window.addEventListener("load", () => {
+            navigator.serviceWorker
+               .register("/sw.js", {
+                  scope: "/~/"
+               })
+               .then(() => {
+                  console.log("Service worker registered successfully");
+               });
+         });
+      }
+   </script>
+   <script>
+      const searchEngineUV = document.getElementById('uv-search-engine');
+      const chosenSearchEngine = localStorage.getItem('searchEngine');
+      if (chosenSearchEngine) {
+         searchEngineUV.value = chosenSearchEngine;
       }
    </script>
    <script src="uv/search.js" defer></script>
