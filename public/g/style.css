@@ -51,7 +51,7 @@
 }
 
 
-.game {
+.g {
   text-align: center;
   text-decoration: none;
   border-radius: 15px;
@@ -62,42 +62,19 @@
   transition: transform 0.3s ease;
 }
 
-.game:hover {
+.g:hover {
   transform: scale(1.03);
 }
 
 
-.game img {
+.g img {
   width: 100%;
   height: auto;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
 }
 
-.game h4 {
+.g h4 {
   margin-top: 10px;
   font-size: 18px;
-}
-
-
-select {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  background-color: #fff;
-  color: #333;
-  appearance: none;
-}
-
-select option {
-  padding: 8px;
-  background-color: #fff;
-  color: #333;
-}
-
-select option:hover {
-  background-color: var(--hover-color);
-  color: #fff;
 }

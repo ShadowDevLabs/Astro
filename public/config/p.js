@@ -1,12 +1,12 @@
-// Proxy
-const proxyDropdown = document.getElementById('proxyDropdown');
-proxyDropdown.addEventListener('change', () => {
-    localStorage.setItem('proxy', proxyDropdown.value);
+// prxy
+const switcherDropdown = document.getElementById('switcherDropdown');
+switcherDropdown.addEventListener('change', () => {
+    localStorage.setItem('prxy', switcherDropdown.value);
 });
 
-const proxy = localStorage.getItem('proxy');
-if (proxy) {
-    proxyDropdown.value = proxy;
+const prxy = localStorage.getItem('prxy');
+if (prxy) {
+    switcherDropdown.value = prxy;
 }
 
 // Search Engine

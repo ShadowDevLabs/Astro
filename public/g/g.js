@@ -1,44 +1,44 @@
 (async () => {
-    const response = await fetch('games.json');
-    const games = await response.json();
+    const response = await fetch('g.json');
+    const gs = await response.json();
     const container = document.querySelector('.gcontainer');
-    const gamecdn = "/g/files/";
+    const gcdn = "/g/files/";
 
-    function renderGame(game) {
-        var gameUrl = gamecdn + game.root + "/" + game.file;
+    function renderg(g) {
+        var gUrl = gcdn + g.root + "/" + g.file;
         const link = document.createElement('a');
-        link.className = 'game';
+        link.className = 'g';
         link.addEventListener('click', (event) => {
-            localStorage.setItem('url', `${gameUrl}`);
+            localStorage.setItem('url', `${gUrl}`);
             window.location.href = '/go';
         });
 
         const img = document.createElement('img');
-        img.dataset.src = gamecdn + game.root + "/" + game.img;
+        img.dataset.src = gcdn + g.root + "/" + g.img;
         img.loading = 'lazy';
         img.classList.add('lazy');
 
         const h3 = document.createElement('h3');
-        h3.textContent = game.name;
+        h3.textContent = g.name;
 
         link.appendChild(img);
         link.appendChild(h3);
-        link.dataset.gameName = game.name;
+        link.dataset.gName = g.name;
         container.appendChild(link);
     }
 
-    function loadAllGames() {
+    function loadAllgs() {
         container.innerHTML = '';
-        games.forEach(renderGame);
+        gs.forEach(renderg);
         lazyLoadImages(); 
     }
 
-    function searchGames(query) {
+    function searchgs(query) {
         container.innerHTML = '';
-        games.forEach(game => {
-            const gameMatches = game.name.toLowerCase().includes(query.toLowerCase());
-            if (gameMatches) {
-                renderGame(game);
+        gs.forEach(g => {
+            const gMatches = g.name.toLowerCase().includes(query.toLowerCase());
+            if (gMatches) {
+                renderg(g);
             }
         });
         lazyLoadImages(); 
@@ -66,14 +66,14 @@
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.trim();
         if (query === '') {
-            loadAllGames();
+            loadAllgs();
         } else {
-            searchGames(query);
+            searchgs(query);
         }
     });
 
-    loadAllGames();
+    loadAllgs();
 
     const loadingContainer = document.getElementById('loading-container');
     loadingContainer.style.display = 'none'; 
-})().catch(error => console.error('Error fetching games:', error));
+})().catch(error => console.error('Error fetching gs:', error));

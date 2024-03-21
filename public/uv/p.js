@@ -9,7 +9,7 @@ async function handleSubmit(event) {
   try {
     const url = search(address.value, searchEngine.value);
     let encodedUrl;
-    const proxy = localStorage.getItem('proxy');
+    const proxy = localStorage.getItem('prxy');
     if (proxy === 'ultraviolet' || proxy === null) {
       encodedUrl = window.__uv$config.prefix + window.__uv$config.encodeUrl(url);
     } else if (proxy === 'dynamic') {
@@ -28,7 +28,7 @@ async function openURL(link) {
   try {
     const url = search(link, "https://www.google.com/search?q=%s");
     let encodedUrl;
-    const proxy = localStorage.getItem('proxy');
+    const proxy = localStorage.getItem('prxy');
     if (proxy === 'ultraviolet' || proxy === null) {
       encodedUrl = window.__uv$config.prefix + window.__uv$config.encodeUrl(url);
     } else if (proxy === 'dynamic') {
