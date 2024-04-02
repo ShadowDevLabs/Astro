@@ -2,7 +2,7 @@ importScripts('/dynamic/dynamic.config.js');
 importScripts('/dynamic/dynamic.worker.js');
 
 importScripts("/uv/uv.bundle.js"); // import our uv scripts
-importScripts("/uv/uv.config.js");
+importScripts("/uv/info.js");
 importScripts(__uv$config.sw || "/uv/uv.sw.js");
 
 const uv = new UVServiceWorker(); // init uv sw
