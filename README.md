@@ -16,6 +16,6 @@
 > [!IMPORTANT]
 > You **cannot** deploy Astro on a static web hosting platform like Netlify, Vercel, Github & Cloudfare Pages!
 
-<a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/ShadowDevLabs/Astro"><img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg"></a>
+<a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/ShadowDevLabs/Astro"><img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/official/heroku.svg"></a>
+<a target="_blank" href="https://app.cyclic.sh/api/app/deploy/ShadowDevLabs/Astro"><img alt="Deploy to Cyclic" src="https://binbashbanana.github.io/deploy-buttons/buttons/official/cyclic.svg"></a>
 <a target="_blank" href="https://app.koyeb.com/deploy?type=git&repository=github.com/ShadowDevLabs/Astro"><img alt="Deploy to Koyeb" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg"></a>
-<a target="_blank" href="https://app.cyclic.sh/api/app/deploy/ShadowDevLabs/Astro"><img alt="Deploy to Cyclic" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg"></a>
