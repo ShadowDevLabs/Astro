@@ -11,6 +11,13 @@
 > [!IMPORTANT]
 > If you deploy or fork this repo, please give this repo a star!
 
+## Features
+| Proxy Switching | Tab Cloak | Themes |
+|---------|---------|---------|
+| Apps | Roblox | Now.GG Works! 
+| Sleek UI | User-Friendly| Fast Speeds|
+
+
 ## Deployment
 
 > [!IMPORTANT]
