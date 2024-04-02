@@ -1,7 +1,12 @@
-# Astro
-Astro is a sleek & light weight proxy that allows you to search the web freely. Features *Ultraviolet & Dynamic Backends!*
+<div align="center">
+    <h1>Astro</h1>
+    <p>A sleek & modernized web proxy designed to enhance the user's experience. </p>
+</div>
+<div style="margin-top: 6px;">
+    <img src="screen.png" style="border-radius:15px;">
+</div>
+
+### [Join the Discord](https://discord.gg/goshadow) for unblocked links, updates, giveaways, and more!
 
 > [!IMPORTANT]
-> If you fork this project, consider giving it a star in the original repository! 
-
-**Join Our [Discord](https://discord.gg/gohadow) for more unblocked links, support, and updates!**
+> If you deploy or fork this repo, please give this repo a star!
