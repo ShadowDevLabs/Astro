@@ -66,7 +66,7 @@
 .icon-button {
     padding: 8px 15px;
     background-color: var(--primary-color);
-    color: var(--contrast-color);
+    color: var(--text-color);
     border: none;
     border-radius: 4px;
     cursor: pointer;

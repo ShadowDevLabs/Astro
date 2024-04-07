@@ -51,3 +51,12 @@
     --contrast-color: #062730;
     --hover-color: #6ca5d9;
 }
+
+:root.neon_green {
+    --primary-color: #28e757;
+    --secondary-color: #04300f;
+    --accent-color: #314404;
+    --text-color: #e8e8e8;
+    --contrast-color: #1b2718;
+    --hover-color: #b3d96c;
+}
