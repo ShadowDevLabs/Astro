@@ -1,11 +1,9 @@
 <div align="center">
+    <img src="public/assets/icons/logo.png" style="width: 300px;">
     <h1>Astro</h1>
     <p>A sleek & modernized web proxy designed to enhance the user's experience. </p>
 </div>
 
-<div style="margin-top: 6px;">
-    <img src="astro.png" style="border-radius:15px;">
-</div>
 
 ### [Join the Discord](https://discord.gg/goshadow) for unblocked links, updates, giveaways, and more!
 
@@ -18,6 +16,11 @@
 | Apps | Roblox | Now.GG Works! 
 | Sleek UI | User-Friendly| Fast Speeds|
 
+## Screenshots
+
+<div style="margin-top: 6px;">
+    <img src="astro.png" style="border-radius:15px;">
+</div>
 
 ## Deployment
 
