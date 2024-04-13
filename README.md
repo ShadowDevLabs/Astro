@@ -14,8 +14,7 @@
 ## Features
 | Proxy Switching | Tab Cloak | Themes |
 |---------|---------|---------|
-| Apps | Roblox | Sleek UI | 
- User-Friendly | Fast Speeds |
+| Apps | Sleek UI | User-Friendly| Fast Speeds|
 
 
 ## Deployment
