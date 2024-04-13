@@ -15,7 +15,7 @@
 | Proxy Switching | Tab Cloak | Themes |
 |---------|---------|---------|
 | Apps | Roblox | Sleek UI | 
-| User-Friendly | Fast Speeds |
+ User-Friendly | Fast Speeds |
 
 
 ## Deployment
