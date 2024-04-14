@@ -13,8 +13,7 @@
 ## Features
 | Proxy Switching | Tab Cloak | Themes |
 |---------|---------|---------|
-| Apps | Roblox | Now.GG Works! 
-| Sleek UI | User-Friendly| Fast Speeds|
+| Apps | Sleek UI | User-Friendly| Fast Speeds|
 
 ## Screenshots
 
