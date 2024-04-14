@@ -1,5 +1,5 @@
 {
-  "name": "Astro",
+  "name": "astro",
   "version": "1.0.0",
   "type": "module",
   "description": "Web proxy based on Ultraviolet",
@@ -8,15 +8,13 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node server"
   },
   "dependencies": {
     "@nebula-services/dynamic": "^0.7.2-patch.2",
     "@titaniumnetwork-dev/ultraviolet": "^2.0.0",
     "@tomphttp/bare-server-node": "^2.0.3",
-    "compression": "^1.7.4",
-    "cors": "^2.8.5",
     "express": "^4.19.2",
-    "node-fetch": "^3.3.2"
+    "mime": "^4.0.1"
   }
 }

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
+    <link rel="stylesheet" href="/assets/css/settings.css">
+    <link rel="stylesheet" href="/assets/css/themes.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+ 
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-L490M86Y8R');</script>
+    <script src="https://cdn.jsdelivr.net/gh/alfg/ping.js@0.2.2/dist/ping.min.js" type="text/javascript"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L490M86Y8R"></script>
+    <script src="/assets/js/themes.js"></script>
+ 
+    <title>Settings | Astro</title>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="heading">
+            <img src="/assets/icons/logo.webp" title="Astro" />
+            <h1 onclick="window.location.href='/'" class="current">Astro</h1>
+        </div>
+
+        <div class="nav-links">
+            <a href="/apps">
+                <span class="material-symbols-outlined">apps</span> Apps
+            </a>
+
+            <a href="/g">
+                <span class="material-symbols-outlined">stadia_controller</span> Games
+            </a>
+
+            <a href="/settings">
+                <span class="material-symbols-outlined">settings</span> Settings
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3 style="font-size: 50px;">Settings</h3>
+    </div>
+
+    <div id="content" class="settings-container">
+        <!-- Tabs Cloak -->
+        <div class="settings-section">
+            <h2 class="section-title">
+                <i class="fa-solid fa-eye-slash"></i> Tab Cloak
+            </h2>
+            
+            <div class="section-content">
+                <!-- Content of Tab Cloak -->
+                <div class="buttons">
+                    <input id="title" class="input-field" placeholder="Title" onkeyup="setTitle(this.value)" />
+                    <input id="icon" class="input-field" placeholder="Favicon" onkeyup="setFavicon(this.value.trim())" />
+                </div>
+
+                <p class="section-content">Ready Made Cloaks</p>
+
+                <div class="buttons">
+                    <select name="Readymade Cloaks" id="premadecloaks" class="input-field" title="Cloaks">
+                        <option value="search">Google Search</option>
+                        <option value="drive">Google Drive</option>
+                        <option value="youtube">YouTube</option>
+                        <option value="gmail">Gmail</option>
+                        <option value="calendar">Google Calendar</option>
+                        <option value="meets">Google Meet</option>
+                        <option value="classroom">Google Classroom</option>
+                        <option value="canvas">Canvas</option>
+                        <option value="zoom">Zoom</option>
+                        <option value="khan">Khan Academy</option>
+                    </select>
+
+                    <div class="select-buttons">
+                        <button class="icon-button" onclick="setCloak()"><i class="fas fa-cogs"></i> Set</button>
+                        <button class="icon-button" onclick="resetTab()"><i class="fas fa-undo-alt"></i> Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Themes -->
+        <div class="settings-section">
+            <h2 class="section-title">
+                <i class="fa-solid fa-paintbrush"></i> Themes
+            </h2>
+
+            <div class="section-content">
+                <!-- Content of Themes -->
+                <p class="section-text">Choose between the following themes. This will change the appearance of the site.</p>
+
+                <select id="themeSelector" onchange="changeTheme()" class="input-field">
+                    <option value="dark">Dark (Default)</option>
+                    <option value="light">Light</option>
+                    <option value="purple">Purple Neon</option>
+                    <option value="shadow">Shadow</option>
+                    <option value="crimson">Crimson</option>
+                    <option value="ocean">Ocean</option>
+                    <option value="neon_green">Neon Green</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- About:Blank Cloaker -->
+        <div class="settings-section">
+            <h2 class="section-title">
+                <i class="fa-solid fa-user-secret"></i> About:Blank
+            </h2>
+
+            <div class="section-content">
+                <p class="section-text">The button below opens the site as an about:blank, hiding it from your history.</p>
+
+                <button class="icon-button" onclick="abtblank()"><i class="fas fa-rocket"></i> Launch</button>
+            </div>
+        </div>
+
+        <!-- Search Engine -->
+        <div class="settings-section">
+            <h2 class="section-title">
+                <i class="fa-brands fa-searchengin"></i> Search Engine
+            </h2>
+
+            <div class="section-content">
+                <!-- Content of search engine -->
+                <p class="section-text">Changing this will change the search engine used when searching.</p>
+
+                <select id="searchEngineDropdown" class="input-field">
+                    <option value="https://www.google.com/search?q=s">Google</option>
+                    <option value="https://www.bing.com/search?q=s">Bing</option>
+                    <option value="https://search.yahoo.com/search?p=s">Yahoo</option>
+                    <option value="https://duckduckgo.com/?q=s">DuckDuckGo</option>
+                    <option value="https://search.brave.com/search?q=s">Brave</option>
+                    <option value="https://yandex.com/search/?text=s">Yandex</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Switcher -->
+        <div class="settings-section">
+            <h2 class="section-title">
+                <i class="fa-solid fa-globe"></i> Proxy Switcher
+            </h2>
+
+            <div class="section-content">
+                <!-- Content of switcher -->
+                <p class="section-text">This is the proxy that is used when searching.</p>
+
+                <select id="switcherDropdown" class="input-field">
+                    <option value="ultraviolet">Ultraviolet</option>
+                    <option value="dynamic">Dynamic</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <p id="uv-error"></p>
+        <pre id="uv-error-code"></pre>
+    </div>
+
+    <script src="/dynamic/dynamic.config.js" defer></script>
+
+    <script src="/uv/uv.bundle.js" defer></script>
+    <script src="/uv/uv.config.js" defer></script>
+
+    <script src="/assets/js/settings.js"></script>
+    <script src="/assets/js/index.js"></script>
+    <script src="/assets/js/cloak.js"></script>
+    <script src="/assets/js/p.js"></script>
+</body>

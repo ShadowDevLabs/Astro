@@ -1,0 +1,101 @@
+:root {
+    --primary-color: #037ef9;
+    --secondary-color: #03011c;
+    --accent-color: #003366;
+    --text-color: #b3d0fe;
+    --contrast-color: #000000;
+    --hover-color: #3d85f7;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container h3 {
+    font-size: 36px;
+    background: linear-gradient(135deg, var(--primary-color), var(--text-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-top: -3vw;
+}
+
+.settings-container {
+    display: grid;
+    padding: 15px;
+    margin-top: -5vw;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 20px;
+}
+
+.settings-section {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    border: 0.5px solid var(--text-color);
+}
+
+.section-title {
+    margin-top: 0;
+}
+
+.section-content {
+    margin-top: 10px;
+}
+
+.input-field {
+    width: calc(100% - 20px);
+    padding: 8px;
+    background-color: transparent;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.input-field::placeholder {
+    color: var(--text-color);
+}
+
+.select-buttons {
+    margin-top: 10px;
+}
+
+.icon-button {
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.icon-button:hover {
+    background-color: var(--hover-color);
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--contrast-color);
+    border-radius: 4px;
+    font-size: 15px;
+    box-sizing: border-box;
+    background-color: transparent;
+    outline: none;
+    color: var(--text-color);
+}
+
+select option {
+    padding: 8px;
+    background-color: var(--contrast-color);
+    color: var(--text-color);
+    font-size: 15px;
+}
+
+select option:hover {
+    background-color: var(--hover-color);
+    color: var(--contrast-color);
+}

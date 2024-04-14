@@ -1,0 +1,62 @@
+:root {
+    --primary-color: #037ef9;
+    --secondary-color: #03011c;
+    --accent-color: #003366;
+    --text-color: #b3d0fe;
+    --contrast-color: #000000;
+    --hover-color: #3d85f7;
+}
+
+:root.light {
+    --primary-color: #037ef9;
+    --secondary-color: #d0effd;
+    --accent-color: #66a3ff;
+    --text-color: #000000;
+    --contrast-color: #89afe3;
+    --hover-color: #3d85f7;
+}
+
+:root.purple {
+    --primary-color: #7d5fff;
+    --secondary-color: #1f0354;
+    --accent-color: #4527a0;
+    --text-color: #ffffff;
+    --contrast-color: #000000;
+    --hover-color: #a676fa;
+}
+
+:root.shadow {
+    --primary-color: #6c3da3;
+    --secondary-color: #262648;
+    --accent-color: #4d4d86;
+    --text-color: #ffffff;
+    --contrast-color: #000000;
+    --hover-color: #a676fa;
+}
+
+:root.crimson {
+    --primary-color: #960032;
+    --secondary-color: #1c0112;
+    --accent-color: #ff5733;
+    --text-color: #e8e8e8;
+    --contrast-color: #000000;
+    --hover-color: #ff0055;
+}
+
+:root.ocean {
+    --primary-color: #354c6e;
+    --secondary-color: #041e30;
+    --accent-color: #043744;
+    --text-color: #e8e8e8;
+    --contrast-color: #062730;
+    --hover-color: #6ca5d9;
+}
+
+:root.neon_green {
+    --primary-color: #28e757;
+    --secondary-color: #04300f;
+    --accent-color: #314404;
+    --text-color: #e8e8e8;
+    --contrast-color: #1b2718;
+    --hover-color: #b3d96c;
+}
